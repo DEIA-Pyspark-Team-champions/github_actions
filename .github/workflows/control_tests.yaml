@@ -20,7 +20,7 @@ jobs:
 
       - name: Run tests
         run: |
-          pytest --rootdir=/home/gomes/Documents/cours/Git/github_learning/github_actions/file_test.py
+          pytest tests/
 
       - name: Run flake8
         uses: py-actions/flake8@v2
