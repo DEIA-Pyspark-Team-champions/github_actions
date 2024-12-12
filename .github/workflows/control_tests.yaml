@@ -13,14 +13,20 @@ jobs:
         with:
           python-version: "3.x"
 
-      - name: Install pytest and flake8
+      - name: Install dependencies
         run: |
           pip install pytest
           pip install flake8
+          pip install black
 
+      - name: Apply Black for code formatting
+        run: |
+          black .
+          
       - name: Run tests
         run: |
           pytest tests/
 
       - name: Run flake8
         uses: py-actions/flake8@v2
+
